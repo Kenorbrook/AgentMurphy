@@ -19,8 +19,7 @@ namespace Elias
         [SerializeField] private Transform groundCheckAnchor;
         [SerializeField] private LayerMask groundLayerMask; // A mask determining what is ground to the character
         float groundCheckRadius = .2f; // Radius of the overlap circle to determine if grounded
-        float groundCheckTimeDelay = 0.1f;
-        float groundCheckTimeTick = 0f;
+
         [SerializeField] private bool isOnGround = true; // Whether or not the player is grounded.
 
         //Shoot
@@ -39,13 +38,11 @@ namespace Elias
         private void Update()
         {
             shootTimeTick-=Time.deltaTime;
-            groundCheckTimeTick -= Time.deltaTime;
         }
 
         private void FixedUpdate()
         {
-            if (groundCheckTimeTick <= 0)
-                OnGroundCheck();
+            OnGroundCheck();
         }
 
         void OnGroundCheck()
@@ -59,7 +56,50 @@ namespace Elias
                     isOnGround = true;                
             }
         }
-        public void HandleShootButton()
+
+        public void HandleMoveInput(bool isMovingDirectionRight)
+        {
+            if ((isMovingRight == true && isMovingDirectionRight == false) || (isMovingRight == false && isMovingDirectionRight == true))
+                TurnAround();
+
+            if (isOnGround == false)
+                return;
+
+            Move();
+            //TODO Animation
+        }
+        void TurnAround()
+        {
+            isMovingRight = !isMovingRight;
+            gameObject.transform.localScale = new Vector3(-gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+
+            //Turn in fly
+            if (isOnGround == false)
+              rigid.velocity = new Vector2(-rigid.velocity.x, rigid.velocity.y);
+        }
+        void Move()
+        {
+            if (isMovingRight)
+                rigid.velocity = new Vector2(speed, rigid.velocity.y);
+            else
+                rigid.velocity = new Vector2(-speed, rigid.velocity.y); ;
+        }
+
+        public void HandleJumpInput()
+        {
+            if (isOnGround)
+            {
+                Jump();
+                //TODO Animation
+            }
+        }
+
+        void Jump()
+        {
+            rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+
+        public void HandleShootInput()
         {
             if (shootTimeTick > 0)
                 return;
@@ -80,35 +120,7 @@ namespace Elias
             projectile.SetActive(true);
         }
 
-        public void Jump()
-        {
-            if (isOnGround)
-            {
-                isOnGround = false;
-                groundCheckTimeTick = groundCheckTimeDelay;
-                rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            }
-        }
 
-        public void Move(bool isMovingDirectionRight)
-        {
-            if ((isMovingRight == true && isMovingDirectionRight == false) || (isMovingRight == false && isMovingDirectionRight == true))
-                TurnAround();
-
-            if (isOnGround == false)
-                return;
-
-            if(isMovingRight)
-                rigid.velocity = Vector2.right * speed;
-            else
-                rigid.velocity = -Vector2.right * speed;
-        }
-
-        void TurnAround()
-        {
-            isMovingRight = !isMovingRight;
-            gameObject.transform.localScale = new Vector3(-gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
-        }
 
 
     }

@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 540764451007045445, guid: a73d26790a8e83841b1de85392341753, type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 540764451007045445, guid: a73d26790a8e83841b1de85392341753, type: 3}
       propertyPath: shootTimeDelay
@@ -430,7 +430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069284789883080338, guid: a73d26790a8e83841b1de85392341753, type: 3}
       propertyPath: m_LinearDrag
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1069284789883080338, guid: a73d26790a8e83841b1de85392341753, type: 3}
       propertyPath: m_Constraints
@@ -438,7 +438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1069284789883080338, guid: a73d26790a8e83841b1de85392341753, type: 3}
       propertyPath: m_GravityScale
-      value: 1.5
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 1089684477871908170, guid: a73d26790a8e83841b1de85392341753, type: 3}
       propertyPath: m_Name
@@ -492,10 +492,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7467008394045883134, guid: a73d26790a8e83841b1de85392341753, type: 3}
+    - target: {fileID: 6025015405267933559, guid: a73d26790a8e83841b1de85392341753, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 83c40706dc5862c41b6b5d1a304f7c62, type: 2}
+    - target: {fileID: 7467008394045883134, guid: a73d26790a8e83841b1de85392341753, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a73d26790a8e83841b1de85392341753, type: 3}
 --- !u!114 &4590720990968093305 stripped
