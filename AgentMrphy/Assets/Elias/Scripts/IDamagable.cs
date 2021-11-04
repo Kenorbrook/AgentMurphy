@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IDamagable 
+namespace Elias
 {
-    void Damage();
+    public interface IDamagable
+    {
+        void Damage();
+    }
 }

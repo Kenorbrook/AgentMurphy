@@ -8,7 +8,7 @@ namespace Elias
     {
         [Header("Set in Inspector")]
         [SerializeField] float speed;
-        [SerializeField] float worldLimit;
+        [SerializeField] float worldBorder;
         Rigidbody2D rigid;
 
         private void Awake()
@@ -33,8 +33,7 @@ namespace Elias
 
         bool isOutWorldBorders() //TODO move to Camera controller
         {
-            Debug.Log(transform.position.x);
-            if (Mathf.Abs(transform.position.x) > worldLimit)
+            if (Mathf.Abs(transform.position.x) > worldBorder)
                 return true;
             else
                 return false;

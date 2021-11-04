@@ -16,11 +16,14 @@ namespace Elias
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical");
 
+            if (horizontalInput != 0)
+                avatar.Move(horizontalInput > 0);
+
+            if (Input.GetButtonDown("Jump"))
+                avatar.Jump();
 
             if (Input.GetButton("Fire1"))
-            {
                 avatar.HandleShootButton();
-            }
         }
     }
 }
