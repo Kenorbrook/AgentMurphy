@@ -474,7 +474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7330621193456991391, guid: a807e7a23b563c94cbdf0aa2d1d6055b, type: 3}
       propertyPath: shootRadious
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7330621193456991391, guid: a807e7a23b563c94cbdf0aa2d1d6055b, type: 3}
       propertyPath: visionRadious

@@ -38,7 +38,7 @@ public class Moveable : MonoBehaviour
 
     public void Jump(float force)
     {
-        if (isOnGround)
+        if (!isOnGround)
             return;
 
         rigid2D.AddForce(Vector2.up * force, ForceMode2D.Impulse);
