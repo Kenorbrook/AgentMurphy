@@ -95,8 +95,9 @@ GameObject:
   - component: {fileID: 6025015405267933559}
   - component: {fileID: 1069284789883080338}
   - component: {fileID: 540764451007045445}
+  - component: {fileID: 8726000825818396688}
   m_Layer: 0
-  m_Name: Avatar
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,15 +168,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa066fe9b237284faf68374ccf3b667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  jumpForce: 0
+  speed: 5
+  jumpForce: 15
+  shootTimeDelay: 0.3
+  weaponAnchor: {fileID: 3553670224436712975}
+--- !u!114 &8726000825818396688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089684477871908170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400eeff0cadd33042b428062c01d7388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   groundCheckAnchor: {fileID: 3351563194761932459}
   groundLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  isOnGround: 1
-  shootTimeDelay: 1
-  weaponAnchor: {fileID: 3553670224436712975}
+    m_Bits: 64
 --- !u!1 &1393590814435282802
 GameObject:
   m_ObjectHideFlags: 0
