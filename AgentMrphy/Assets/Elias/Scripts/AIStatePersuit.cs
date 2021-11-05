@@ -40,6 +40,7 @@ public class AIStatePersuit : AIState
 
     public override void HandleTurnPointEnter()
     {
+        bot.TurnArount();
         OnStateExit(new AIStateIdle(bot));
     }
 }

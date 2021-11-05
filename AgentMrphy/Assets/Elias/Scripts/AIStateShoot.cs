@@ -18,6 +18,10 @@ public class AIStateShoot : AIState
 
     public override void StateUpdate()
     {
+        if(bot.IfPlayerVisible()== false)
+        {
+            OnStateExit(new AIStateIdle(bot));
+        }
         if (bot.IfPlayerInShootRange() == false)
         {
             OnStateExit(new AIStatePersuit(bot));

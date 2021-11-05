@@ -15,17 +15,17 @@ public class AIStateIdle : AIState
 
     public override void OnStateExit(AIState newState)
     {
+        bot.TurnArount();
         base.OnStateExit(newState);
     }
 
     public override void StateUpdate()
     {
- /*       if (bot.IfPlayerVisible())
+        if (bot.IfPlayerVisible())
         {
-            Debug.Log("PlayerVisible");
             OnStateExit(new AIStatePersuit(bot));
             return;
-        }*/
+        }
     }
 
     public override void HandleTurnPointEnter()
