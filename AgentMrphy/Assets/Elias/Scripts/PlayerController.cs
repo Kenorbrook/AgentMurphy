@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     [Header("Set in Inspector")]
 
     //Move
-    [SerializeField] private float speed;
-
+    [SerializeField] protected float moveSpeed;
+    [SerializeField] protected float runSpeed;
     //Jump
     [SerializeField] private float jumpForce;
 
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float shootTimeDelay;
     [SerializeField] private Transform weaponAnchor;
     private float shootTimeTick = 0f;
-    Moveable moveableComponent;
+    protected Moveable moveableComponent;
 
     private void Awake()
     {
@@ -32,15 +32,29 @@ public class PlayerController : MonoBehaviour
     public void HandleMoveInput(bool isMovingDirectionRight)
     {
         moveableComponent.TurnAround(isMovingDirectionRight);
+        Move();
+    }
+    public void Move()
+    {
+        moveableComponent.Move(moveSpeed);
+        //TODO Animation
+    }
 
-
-        moveableComponent.Move(speed);
+    public void Run()
+    {
+        moveableComponent.Move(runSpeed);
         //TODO Animation
     }
 
     public void HandleJumpInput()
     {
         moveableComponent.Jump(jumpForce);
+        //TODO Animation
+    }
+
+    public void TurnArount()
+    {
+        moveableComponent.TurnAround();
         //TODO Animation
     }
 
@@ -54,7 +68,7 @@ public class PlayerController : MonoBehaviour
         shootTimeTick = shootTimeDelay;
     }
 
-    void ShootProjectile()
+    virtual protected GameObject ShootProjectile()
     {
         GameObject projectile = PoolManager.Instance.PojectilePool.GetPooledObject();
         projectile.transform.position = weaponAnchor.position;
@@ -64,5 +78,27 @@ public class PlayerController : MonoBehaviour
             projectile.transform.Rotate(projectile.transform.up, 180f);
 
         projectile.SetActive(true);
+        return projectile;
+    }
+
+    protected GameObject[] ObjectsInRange(float searchRadious, LayerMask searchTarget)
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(gameObject.transform.position, searchRadious, searchTarget);
+        if (colliders != null)
+        {
+            GameObject[] obj = new GameObject[colliders.Length];
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                obj[i] = colliders[i].gameObject;
+            }
+            return obj;
+        }
+        else
+            return null;
+    }
+
+    protected bool IsLookingRight()
+    {
+        return (transform.position.x > 0);
     }
 }

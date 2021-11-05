@@ -49,6 +49,11 @@ public class Moveable : MonoBehaviour
         if (!((isMovingRight == true && is_moving_direction_right == false) || (isMovingRight == false && is_moving_direction_right == true)))
             return;
 
+        TurnAround();
+    }
+
+    public void TurnAround()
+    {
         isMovingRight = !isMovingRight;
         gameObject.transform.localScale = new Vector3(-gameObject.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
 
