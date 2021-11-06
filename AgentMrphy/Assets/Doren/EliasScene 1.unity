@@ -616,6 +616,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.11681, y: 4.501897}
   m_EdgeRadius: 0
+--- !u!1 &420952353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 765074923268518649, guid: 6c9c056a8a28029498440e9e82f91ed5, type: 3}
+  m_PrefabInstance: {fileID: 3633409585159474607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &420952356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420952353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc98c0798c40dc4f89be7561760e7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &420952357
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420952353}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 568f24078ea70e64f8547e4734bd55cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &426220870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3357,6 +3393,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2127997591}
     - target: {fileID: 765074923268518649, guid: 6c9c056a8a28029498440e9e82f91ed5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 765074923268518649, guid: 6c9c056a8a28029498440e9e82f91ed5, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -3375,6 +3415,10 @@ PrefabInstance:
     - target: {fileID: 4361980961095008728, guid: 6c9c056a8a28029498440e9e82f91ed5, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280542487065903483, guid: 6c9c056a8a28029498440e9e82f91ed5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5290362465570527145, guid: 6c9c056a8a28029498440e9e82f91ed5, type: 3}
       propertyPath: m_RootOrder
