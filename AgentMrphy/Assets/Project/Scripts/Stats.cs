@@ -8,24 +8,28 @@ public class Stats : MonoBehaviour
 {
     protected float BulletsCount = 5;
 
-    UnityEvent ShootEvent;
+    //UnityEvent ShootEvent;
+    public Events.EventIntegerEvent onBulletChange;
 
-    //[SerializeField] Text CounterText;
-
+    private void Awake()
+    {
+        onBulletChange = new Events.EventIntegerEvent();
+    }
     void Start()
     {
         //CounterText.text = BulletsCount.ToString();
 
-        if (ShootEvent == null)
+/*        if (ShootEvent == null)
             ShootEvent = new UnityEvent();
-
+*/
         //ShootEvent.AddListener(Shooted);
     }
 
     public void IncreaseOneButton()
     {
         BulletsCount--;
-        ShootEvent.Invoke();
+        onBulletChange.Invoke((int)BulletsCount);
+        //ShootEvent.Invoke();
     }
 
     public float GetBulletsCount()

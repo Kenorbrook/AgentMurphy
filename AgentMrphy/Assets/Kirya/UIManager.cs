@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Text counterText;
+    [SerializeField] Stats playerStats;
+    private void Start()
     {
-        
+        playerStats.onBulletChange.AddListener(HandleOnBulletChange);
     }
 
-    // Update is called once per frame
-    void Update()
+    void HandleOnBulletChange(int bullets)
     {
-        
+        counterText.text = bullets.ToString();
     }
 }
