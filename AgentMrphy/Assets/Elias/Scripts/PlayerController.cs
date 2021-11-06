@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform weaponAnchor;
     private float shootTimeTick = 0f;
     protected Moveable moveableComponent;
+    public Stats stats;
 
     private void Awake()
     {
@@ -70,15 +71,24 @@ public class PlayerController : MonoBehaviour
 
     virtual protected GameObject ShootProjectile()
     {
-        GameObject projectile = PoolManager.Instance.PojectilePool.GetPooledObject();
-        projectile.transform.position = weaponAnchor.position;
+        if (stats.GetBulletsCount() > 0)
+        {
+            GameObject projectile = PoolManager.Instance.PojectilePool.GetPooledObject();
+            projectile.transform.position = weaponAnchor.position;
 
-        projectile.transform.rotation = weaponAnchor.rotation;
-        if (gameObject.transform.localScale.x < 0)
-            projectile.transform.Rotate(projectile.transform.up, 180f);
+            projectile.transform.rotation = weaponAnchor.rotation;
+            if (gameObject.transform.localScale.x < 0)
+                projectile.transform.Rotate(projectile.transform.up, 180f);
 
-        projectile.SetActive(true);
-        return projectile;
+            projectile.SetActive(true);
+            stats.IncreaseOneButton();
+            return projectile;
+        }
+        else
+        {
+            return null;
+        }
+
     }
 
     protected GameObject[] ObjectsInRange(float searchRadious, LayerMask searchTarget)
