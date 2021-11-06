@@ -23,8 +23,7 @@ public class EnemyController : PlayerController
 
     private void FixedUpdate()
     {
-        currentState.StateUpdate();
-        
+        currentState.StateUpdate();        
     }
 
     public void SetState(AIState state)
@@ -73,7 +72,6 @@ public class EnemyController : PlayerController
             Debug.Log("EnemyController: AreLookingAtTarget");
             return true;
         }
-           
     }
 
     public bool IfTargetInShootRange()
