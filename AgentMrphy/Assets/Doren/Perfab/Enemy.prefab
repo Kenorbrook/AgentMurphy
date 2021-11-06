@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 8211134385674376336}
   - component: {fileID: 449771058447507986}
   - component: {fileID: 8086852649852845899}
-  - component: {fileID: 3411512198001883853}
+  - component: {fileID: 6519573603755716308}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -241,8 +241,8 @@ MonoBehaviour:
     m_Bits: 128
   idleTime: 1
   idleStateChance: 0.051
---- !u!70 &3411512198001883853
-CapsuleCollider2D:
+--- !u!58 &6519573603755716308
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -250,13 +250,13 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 8086852649852845896}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 83c40706dc5862c41b6b5d1a304f7c62, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.84, y: 1.72}
-  m_Direction: 0
+  serializedVersion: 2
+  m_Radius: 0.86
 --- !u!1 &8674767241472507692
 GameObject:
   m_ObjectHideFlags: 0
