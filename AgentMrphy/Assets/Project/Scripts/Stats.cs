@@ -6,34 +6,27 @@ using UnityEngine.UI;
 
 public class Stats : MonoBehaviour
 {
-    protected float BulletsCount = 5;
+    protected int bulletsCount = 5;
 
-    //UnityEvent ShootEvent;
-    public Events.EventIntegerEvent onBulletChange;
+    [HideInInspector]public Events.EventIntegerEvent onBulletChange;
 
     private void Awake()
     {
         onBulletChange = new Events.EventIntegerEvent();
     }
-    void Start()
+    public void IncreaseOneBullet()
     {
-        //CounterText.text = BulletsCount.ToString();
-
-/*        if (ShootEvent == null)
-            ShootEvent = new UnityEvent();
-*/
-        //ShootEvent.AddListener(Shooted);
+        bulletsCount--;
+        onBulletChange.Invoke(bulletsCount);
     }
-
-    public void IncreaseOneButton()
+    public void PlusOneBullet()
     {
-        BulletsCount--;
-        onBulletChange.Invoke((int)BulletsCount);
-        //ShootEvent.Invoke();
+        bulletsCount++;
+        onBulletChange.Invoke(bulletsCount);
     }
 
     public float GetBulletsCount()
     {
-        return BulletsCount;
+        return bulletsCount;
     }
 }

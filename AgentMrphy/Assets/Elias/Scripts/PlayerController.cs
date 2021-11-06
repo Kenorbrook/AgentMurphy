@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
                 projectile.transform.Rotate(projectile.transform.up, 180f);
 
             projectile.SetActive(true);
-            stats.IncreaseOneButton();
+            stats.IncreaseOneBullet();
             return projectile;
         }
         else
