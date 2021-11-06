@@ -10,21 +10,16 @@ public class Stats : MonoBehaviour
 
     UnityEvent ShootEvent;
 
-    [SerializeField] Text CounterText;
+    //[SerializeField] Text CounterText;
 
     void Start()
     {
-        CounterText.text = BulletsCount.ToString();
+        //CounterText.text = BulletsCount.ToString();
 
         if (ShootEvent == null)
             ShootEvent = new UnityEvent();
 
-        ShootEvent.AddListener(Shooted);
-    }
-
-    void Shooted()
-    {
-        CounterText.text = BulletsCount.ToString();
+        //ShootEvent.AddListener(Shooted);
     }
 
     public void IncreaseOneButton()
