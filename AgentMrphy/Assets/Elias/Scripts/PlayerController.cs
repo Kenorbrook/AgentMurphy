@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
     virtual protected GameObject ShootProjectile()
     {
+        Debug.Log(stats.GetBulletsCount());
         if (stats.GetBulletsCount() > 0)
         {
             GameObject projectile = PoolManager.Instance.PojectilePool.GetPooledObject();
