@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
         shootTimeTick = shootTimeDelay;
     }
 
+    
     virtual protected GameObject ShootProjectile()
     {
         if (stats.GetBulletsCount() > 0)
