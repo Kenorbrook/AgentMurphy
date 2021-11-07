@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2779019645869886398}
-  m_Layer: 0
+  - component: {fileID: 7294749604544644716}
+  m_Layer: 7
   m_Name: Wall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7294749604544644716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911285461815815270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079a468bc293d0948988546706880b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 0
 --- !u!1001 &4081395958120890440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95,10 +109,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4483198552060471210, guid: ada5d98ef49770d43b64cae11ae03158, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5904858726541060505, guid: ada5d98ef49770d43b64cae11ae03158, type: 3}
       propertyPath: m_Name
       value: "\u043A\u0438\u0440\u043F\u0438\u0447\u043D\u0430\u044F \u0441\u0442\u0435\u043D\u0430_0
         (1)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904858726541060505, guid: ada5d98ef49770d43b64cae11ae03158, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada5d98ef49770d43b64cae11ae03158, type: 3}
@@ -170,9 +192,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4483198552060471210, guid: ada5d98ef49770d43b64cae11ae03158, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5904858726541060505, guid: ada5d98ef49770d43b64cae11ae03158, type: 3}
       propertyPath: m_Name
       value: "\u043A\u0438\u0440\u043F\u0438\u0447\u043D\u0430\u044F \u0441\u0442\u0435\u043D\u0430_0"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904858726541060505, guid: ada5d98ef49770d43b64cae11ae03158, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada5d98ef49770d43b64cae11ae03158, type: 3}
