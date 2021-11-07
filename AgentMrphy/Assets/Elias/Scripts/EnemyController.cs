@@ -8,18 +8,26 @@ public class EnemyController : PlayerController
     [SerializeField] bool couldshoot =true;
     [SerializeField] float visionRadious;
     [SerializeField] float shootRadious;
+    [SerializeField] float closeRadious;
+    [SerializeField] float closeAttackTime; //Подогнать значение под анимацию;
     [SerializeField] LayerMask playerLayerMask;
     [SerializeField] float idleTime = 1f;
     [SerializeField] [Range(0, 1)] float idleStateChance = 0.2f;
  
     private AIState currentState;
     private Transform target;
-
+    bool isCloseAtackInProgres=false;
     public bool CouldShoot { get { return couldshoot; }}
     public float IdleStateChance { get { return idleStateChance; } }
+
+    public bagAttack bagAttack;
+
+    private Animator enemyAnimator;
+
     private void Start()
     {
         SetState(new AIStateIdle(this));
+        enemyAnimator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -60,6 +68,53 @@ public class EnemyController : PlayerController
 
        //Debug.Log("EnemyController: PlayerVisible");
        return false;
+    }
+
+    public void CloseAttack()
+    {
+        isCloseAtackInProgres = true;
+        StartCoroutine(Attack(closeAttackTime));
+    }
+    IEnumerator Attack(float time)
+    {
+        //TODO statr animation
+
+        enemyAnimator.SetTrigger("Punch");
+        yield return new WaitForSeconds(time);
+        //TODO создать коллайдер триггер на расстоянии closeRadious (посмотреть по анимации мешка где он должен быть)
+        // если в этот коллайдер попал игрок, то нанести Damage (взять реализацию из projectile)
+
+        isCloseAtackInProgres = false;
+        currentState.OnStateExit(new AIStatePersuit(this));
+    }
+
+    public void CheckAttack()
+    {
+        if (bagAttack.isPlayerInTrigger)
+        {
+            KiryaGameManager.EndPanel.SetActive(true);
+            Time.timeScale = 0;
+            KiryaGameManager.Player.enabled = false;
+        }
+    }
+
+    public bool IfTargetInCloseRange()
+    {
+        if (target == null)
+            return false;
+
+        if ((transform.position - target.position).magnitude < closeRadious)
+        {
+            Debug.Log("EnemyController: TargetInShootRange");
+            Debug.DrawLine(transform.position, target.position, Color.red);
+            return true;
+        }
+        else
+        {
+            Debug.DrawLine(transform.position, target.position, Color.yellow);
+            return false;
+        }
+
     }
 
     bool IsLookingAtTargetDirection(Transform obj2)
@@ -136,6 +191,5 @@ public class EnemyController : PlayerController
         Gizmos.DrawWireSphere(transform.position, visionRadious);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, shootRadious);
-
     }
 }
