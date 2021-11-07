@@ -23,13 +23,7 @@ public class UserInputManger : Singleton<UserInputManger>
     {
         if (avatar == null)
             return;
-
-#if UNITY_EDITOR
         PCInput();
-#elif UNITY_ANDROID
-        MobileInpute();
-#endif
-
     }
 
     void MobileInput()
