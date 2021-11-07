@@ -12,12 +12,24 @@ public class KiryaGameManager : MonoBehaviour
     public GameObject pausePanel;
     public static PlayerController Player;
     public PlayerController player;
+    public int EnemiesCount;
+    public static KiryaGameManager Instance;
+    
     private void Start()
     {
+        Instance = this;
         EndPanel = endPanel;
         transformablObjects = transformableObjects;
         Player = player;
         Time.timeScale = 1;
+    }
+
+    private void Update()
+    {
+        if (EnemiesCount <= 0)
+        {
+            Debug.Log("GameEnd");
+        }
     }
 
     public void RestartLevel()

@@ -2051,7 +2051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformableObjects:
-  - {fileID: 643696457, guid: f4472dd4cfb386945a54519154d07e40, type: 3}
+  - {fileID: 7294749604544644716, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
   - {fileID: 1983988292, guid: e87b05f7ee4928f4f9b1d63eeed090ef, type: 3}
   endPanel: {fileID: 1805343994}
   pausePanel: {fileID: 1848269790}
@@ -2910,7 +2910,7 @@ Transform:
   - {fileID: 551711341}
   - {fileID: 977440637}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &712534047
 GameObject:
@@ -3774,10 +3774,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 473866058610960354, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2779019645869886398, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3825,10 +3821,6 @@ PrefabInstance:
     - target: {fileID: 4911285461815815270, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
       propertyPath: m_Name
       value: Wall 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6198125761159835521, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
@@ -4211,7 +4203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2542921124430347477, guid: e2ec760a9c8bc6247ba94df05957d979, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2542921124430347477, guid: e2ec760a9c8bc6247ba94df05957d979, type: 3}
       propertyPath: m_LocalPosition.x
