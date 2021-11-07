@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 7237869238148290372}
   - component: {fileID: 1422069737450398150}
   - component: {fileID: 7330621193456991391}
+  - component: {fileID: 6964836666689600361}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -161,12 +162,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0476e494ff9618143835e1623d9ffbba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  moveSpeed: 0
+  runSpeed: 0
   jumpForce: 15
   shootTimeDelay: 0.3
   weaponAnchor: {fileID: 6626452416228560857}
   couldshoot: 0
-  persuitSpeedMultiplyer: 0
+  visionRadious: 0
+  shootRadious: 0
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  idleTime: 1
+  idleStateChance: 0.2
+--- !u!114 &6964836666689600361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7330621193456991388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25303c38a6a9cad4c88d63f08e523b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7918219132170566904
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +260,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0.2526425, b: 0.23137254, a: 1}
+  m_Color: {r: 0.8301887, g: 0.8102444, b: 0.512994, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
