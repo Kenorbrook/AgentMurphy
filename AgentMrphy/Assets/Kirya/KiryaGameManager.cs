@@ -10,6 +10,7 @@ public class KiryaGameManager : MonoBehaviour
     public static GameObject EndPanel;
     public GameObject endPanel;
     public GameObject pausePanel;
+    public GameObject WinPanel;
     public static PlayerController Player;
     public PlayerController player;
     public int EnemiesCount;
@@ -28,7 +29,7 @@ public class KiryaGameManager : MonoBehaviour
     {
         if (EnemiesCount <= 0)
         {
-            Debug.Log("GameEnd");
+            WinPanel.SetActive(true);
         }
     }
 
@@ -39,7 +40,7 @@ public class KiryaGameManager : MonoBehaviour
 
     public void ToMainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     public void PauseGame(bool state)
