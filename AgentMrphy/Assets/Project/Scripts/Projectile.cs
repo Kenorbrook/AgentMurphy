@@ -40,6 +40,8 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+          Debug.LogError(collision.gameObject);
+
         if (collision.gameObject.GetComponent<ITransformable>() != null)
         {
             collision.gameObject.GetComponent<ITransformable>().HandleTransforming();
