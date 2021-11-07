@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6560098061632156519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49, y: 0, z: 0}
+  m_LocalPosition: {x: 0.632, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7406735664832174876}
@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 449771058447507986}
   - component: {fileID: 8086852649852845899}
   - component: {fileID: 6519573603755716308}
+  - component: {fileID: 1983988292}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -170,9 +171,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8086852649852845896}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.116143, y: -0.31565177, z: 804.79}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.7738, y: 2.7738, z: 2.7738}
   m_Children:
   - {fileID: 5883450531500176553}
   - {fileID: 717232242739357019}
@@ -233,6 +234,8 @@ MonoBehaviour:
   jumpForce: 15
   shootTimeDelay: 0.3
   weaponAnchor: {fileID: 5653213648358116365}
+  stats: {fileID: 0}
+  playerAnimator: {fileID: 0}
   couldshoot: 1
   visionRadious: 6
   shootRadious: 4
@@ -257,6 +260,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.86
+--- !u!114 &1983988292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086852649852845896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079a468bc293d0948988546706880b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 1
 --- !u!1 &8674767241472507692
 GameObject:
   m_ObjectHideFlags: 0

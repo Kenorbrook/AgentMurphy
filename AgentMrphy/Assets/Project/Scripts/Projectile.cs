@@ -40,14 +40,19 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<IDamagable>() != null)
+        if (collision.gameObject.GetComponent<ITransformable>() != null)
         {
-            foreach (IDamagable damagable in collision.gameObject.GetComponents<IDamagable>())
-            {
-                damagable.Damage();
-                DestroyProjectile();
-            }
+            collision.gameObject.GetComponent<ITransformable>().HandleTransforming();
+            DestroyProjectile();
         }
+        //if (collision.gameObject.GetComponent<IDamagable>() != null)
+        //{
+        //    foreach (IDamagable damagable in collision.gameObject.GetComponents<IDamagable>())
+        //    {
+        //        damagable.Damage();
+        //        DestroyProjectile();
+        //    }
+        //}
     }
 
     void DestroyProjectile()
