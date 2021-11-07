@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float shootTimeTick = 0f;
     protected Moveable moveableComponent;
     public Stats stats;
+    public PlayerAnimator playerAnimator;
 
     private void Awake()
     {
@@ -82,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
             projectile.SetActive(true);
             stats.IncreaseOneBullet();
+            playerAnimator.AnimateShoot();
             return projectile;
         }
         else

@@ -633,6 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc98c0798c40dc4f89be7561760e7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
 --- !u!95 &420952357
 Animator:
   serializedVersion: 3
@@ -3392,6 +3393,10 @@ PrefabInstance:
       propertyPath: stats
       value: 
       objectReference: {fileID: 2127997591}
+    - target: {fileID: 745588491057105042, guid: 6c9c056a8a28029498440e9e82f91ed5, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 420952356}
     - target: {fileID: 765074923268518649, guid: 6c9c056a8a28029498440e9e82f91ed5, type: 3}
       propertyPath: m_IsActive
       value: 1

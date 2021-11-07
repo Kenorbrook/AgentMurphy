@@ -25,7 +25,7 @@ public class Stats : MonoBehaviour
         onBulletChange.Invoke(bulletsCount);
     }
 
-    public float GetBulletsCount()
+    public int GetBulletsCount()
     {
         return bulletsCount;
     }
