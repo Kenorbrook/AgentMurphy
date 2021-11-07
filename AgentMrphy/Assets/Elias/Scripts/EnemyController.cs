@@ -93,6 +93,8 @@ public class EnemyController : PlayerController
         if (bagAttack.isPlayerInTrigger)
         {
             KiryaGameManager.EndPanel.SetActive(true);
+            Time.timeScale = 0;
+            KiryaGameManager.Player.enabled = false;
         }
     }
 
