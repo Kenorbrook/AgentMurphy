@@ -19,9 +19,15 @@ public class EnemyController : PlayerController
     bool isCloseAtackInProgres=false;
     public bool CouldShoot { get { return couldshoot; }}
     public float IdleStateChance { get { return idleStateChance; } }
+
+    public bagAttack bagAttack;
+
+    private Animator enemyAnimator;
+
     private void Start()
     {
         SetState(new AIStateIdle(this));
+        enemyAnimator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -72,12 +78,24 @@ public class EnemyController : PlayerController
     IEnumerator Attack(float time)
     {
         //TODO statr animation
+
+        enemyAnimator.SetTrigger("Punch");
         yield return new WaitForSeconds(time);
         //TODO создать коллайдер триггер на расстоянии closeRadious (посмотреть по анимации мешка где он должен быть)
         // если в этот коллайдер попал игрок, то нанести Damage (взять реализацию из projectile)
+
         isCloseAtackInProgres = false;
         currentState.OnStateExit(new AIStatePersuit(this));
     }
+
+    public void CheckAttack()
+    {
+        if (bagAttack.isPlayerInTrigger)
+        {
+            KiryaGameManager.EndPanel.SetActive(true);
+        }
+    }
+
     public bool IfTargetInCloseRange()
     {
         if (target == null)
