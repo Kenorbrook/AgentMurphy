@@ -64,9 +64,6 @@ public class Moveable : MonoBehaviour
 
     public void Move(float speed)
     {
-        if (!isOnGround)
-            return;
-
         if (isMovingRight)
             rigid2D.velocity = new Vector2(speed, rigid2D.velocity.y);
         else
