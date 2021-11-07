@@ -2233,11 +2233,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformableObjects:
-  - {fileID: 643696457, guid: f4472dd4cfb386945a54519154d07e40, type: 3}
+  - {fileID: 7294749604544644716, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
   - {fileID: 1983988292, guid: e87b05f7ee4928f4f9b1d63eeed090ef, type: 3}
+  - {fileID: 2052664686704547276, guid: 2f6e4df2051dbfb4b869ea00bc296fd0, type: 3}
   endPanel: {fileID: 1805343994}
   pausePanel: {fileID: 1848269790}
   player: {fileID: 4050048933848286525}
+  EnemiesCount: 2
 --- !u!4 &480259456
 Transform:
   m_ObjectHideFlags: 0
@@ -4352,10 +4354,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 473866058610960354, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2779019645869886398, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -4403,10 +4401,6 @@ PrefabInstance:
     - target: {fileID: 4911285461815815270, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
       propertyPath: m_Name
       value: Wall 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6198125761159835521, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 980f360fc9377b241973c29f15905f8c, type: 3}
