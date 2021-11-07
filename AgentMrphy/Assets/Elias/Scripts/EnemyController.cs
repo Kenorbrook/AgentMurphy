@@ -58,7 +58,7 @@ public class EnemyController : PlayerController
                 
        }
 
-       Debug.Log("EnemyController: PlayerVisible");
+       //Debug.Log("EnemyController: PlayerVisible");
        return false;
     }
 
@@ -70,7 +70,7 @@ public class EnemyController : PlayerController
             return false;
         else
         {
-            Debug.Log("EnemyController: AreLookingAtTarget");
+           // Debug.Log("EnemyController: AreLookingAtTarget");
             return true;
         }
     }

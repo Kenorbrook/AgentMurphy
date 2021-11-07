@@ -45,6 +45,7 @@ public class Projectile : MonoBehaviour
             collision.gameObject.GetComponent<ITransformable>().HandleTransforming();
             DestroyProjectile();
         }
+        
         //if (collision.gameObject.GetComponent<IDamagable>() != null)
         //{
         //    foreach (IDamagable damagable in collision.gameObject.GetComponents<IDamagable>())

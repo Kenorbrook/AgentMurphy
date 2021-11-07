@@ -28,7 +28,7 @@ public class AIStateShoot : AIState
             return;
         }
 
-        bot.HandleShootInput();
+        //bot.HandleShootInput();
     }
 
     public override void HandleTurnPointEnter()
