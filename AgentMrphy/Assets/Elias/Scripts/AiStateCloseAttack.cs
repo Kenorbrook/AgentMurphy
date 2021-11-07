@@ -29,7 +29,7 @@ public class AiStateCloseAttack : AIState
             return;
         }
 
-        bot.HandleShootInput();
+        bot.CloseAttack();
     }
 
     public override void HandleTurnPointEnter()
