@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float shootTimeTick = 0f;
     protected Moveable moveableComponent;
     public Stats stats;
+    public PlayerAnimator playerAnimator;
 
     private void Awake()
     {
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
     virtual protected GameObject ShootProjectile()
     {
+        Debug.Log(stats.GetBulletsCount());
         if (stats.GetBulletsCount() > 0)
         {
             GameObject projectile = PoolManager.Instance.PojectilePool.GetPooledObject();
@@ -82,6 +84,7 @@ public class PlayerController : MonoBehaviour
 
             projectile.SetActive(true);
             stats.IncreaseOneBullet();
+            playerAnimator.AnimateShoot();
             return projectile;
         }
         else
