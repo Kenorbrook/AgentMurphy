@@ -46,7 +46,6 @@ public class KiryaGameManager : MonoBehaviour
     public void PauseGame(bool state)
     {
         pausePanel.SetActive(state);
-        Player.enabled = state;
         if (state)
         {
             Time.timeScale = 0;
