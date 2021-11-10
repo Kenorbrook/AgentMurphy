@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.18823528, g: 1, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -303,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -256.32996, y: 100}
+  m_AnchoredPosition: {x: -201, y: 21}
   m_SizeDelta: {x: 165.53, y: 181.97}
   m_Pivot: {x: 0.49999997, y: 0.5}
 --- !u!114 &67109880
@@ -1517,7 +1517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -76.70007, y: -64.599976}
+  m_AnchoredPosition: {x: -76.700195, y: -64.59985}
   m_SizeDelta: {x: 119.599976, y: 88.609985}
   m_Pivot: {x: 0.49999958, y: 0.5}
 --- !u!114 &634054464
@@ -1696,7 +1696,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0%
+  m_Text: 100%
 --- !u!222 &647716838
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1729,7 +1729,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660311035}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0011960816, w: 0.9999993}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0000799, y: 1.0000799, z: 1.0000799}
   m_Children:
@@ -1740,7 +1740,7 @@ RectTransform:
   - {fileID: 1194005926}
   m_Father: {fileID: 676933731}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.137}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 480, y: -203}
@@ -2564,7 +2564,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.18823528, g: 1, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2903,8 +2903,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 445, y: -183}
-  m_SizeDelta: {x: 727.52, y: 238.11}
+  m_AnchoredPosition: {x: 445, y: -122.33002}
+  m_SizeDelta: {x: 727.52, y: 154.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982250232
 MonoBehaviour:
@@ -3226,7 +3226,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0%
+  m_Text: 100%
 --- !u!222 &1194005928
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3269,8 +3269,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 587, y: 51}
-  m_SizeDelta: {x: 1104.21, y: 251.12}
+  m_AnchoredPosition: {x: 527, y: -43}
+  m_SizeDelta: {x: 1017.32, y: 624.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1248165039
 MonoBehaviour:
@@ -3294,18 +3294,40 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 65
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 3
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0413\u0415\u0419\u041C\u0418\u0417\u0410\u0419\u041D\n"
+  m_Text: "\u041A\u043E\u043C\u0430\u043D\u0434\u0430 \u042D\u043B\u043B\u0435\u0434\u0438\u044F\r\n\r\n\u0413\u0435\u043E\u0440\u0433\u0438\u0439
+    \u041B\u0443\u0437\u044F\u043D\u0438\u043D - \u0410\u0432\u0442\u043E\u0440 \u0438\u0434\u0435\u0438,
+    Game Designer | https://vk.com/taran2033 | \u0414\u0421 D0REN#0228\r\n\r\n\u0413\u0435\u0439\u043C-\u0434\u0438\u0437\u0430\u0439\u043D\r\n\r\n\u041C\u0430\u043A\u0441\u0438\u043C
+    \u0422\u0438\u043D\u044C\u043A\u043E\u0432 - Game Desinger | https://vk.com/makstink
+    | Saitan#6105\r\n\u0421\u0442\u0435\u0440\u043A\u0438\u043D \u0421\u0435\u0440\u0433\u0435\u0439
+    - Game Designer | https://vk.com/sterkinsa\r\n\r\n2D Art\r\n\r\n\u0421\u0442\u0435\u0440\u043A\u0438\u043D\u0430
+    \u0410\u043D\u043D\u0430 - 2D Artist | character design | \u043F\u0440\u043E\u0444\u0438\u043B\u044C
+    \u0432\u043A: https://vk.com/sterkina | Sterkina_Anna#3020\r\n\u0410\u043D\u0430\u0441\u0442\u0430\u0441\u0438\u044F
+    \u041C\u0438\u0445\u043D\u043E - 2D Artist | \u043F\u0440\u043E\u0444\u0438\u043B\u044C
+    \u0432\u043A: https://vk.com/firefly2108 | _firefly2108#3416\r\n\u0416\u0435\u0440\u043D\u043E\u0432\u0430
+    \u041A\u0441\u0435\u043D\u0438\u044F - concept & level art | insta: @Xeniarta
+    | Xeniarta#1146\r\n\r\nNarrative\r\n\r\n\u0418\u0440\u0438\u043D\u0430 \u041B\u0438\u0442\u0432\u0438\u043D\u0435\u043D\u043A\u043E
+    - Narrative Designer | \u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0432\u043A:
+    https://vk.com/id72693470 | \u0414\u0421 \u041B\u044E\u0442\u043E\u0432\u043E\u043B\u0444\u0438\u0449\u0435#7102
+    | Instagram @lutovolf_irina\r\n\r\nUnity Developer\r\n\r\n\u041A\u0443\u0437\u043D\u0435\u0446\u043E\u0432
+    \u041A\u0438\u0440\u0438\u043B\u043B - Unity Developer | \u0414\u0421 (ChelovekCode#2861)\r\n\u041C\u0430\u043A\u0441\u0438\u043C
+    \u0427\u0435\u0440\u0435\u043D\u043A\u043E\u0432 - Unity Developer | \u043F\u0440\u043E\u0444\u0438\u043B\u044C
+    \u0432\u043A: https://vk.com/khusagi | \u0414\u0421 Xusagi#1699\r\n\u041C\u0430\u043A\u0441\u0438\u043C
+    \u042D\u0440\u0438\u043C\u043E\u043B\u043E\u0432 - Unity Developer | \u043F\u0440\u043E\u0444\u0438\u043B\u044C
+    \u0432\u043A: https://vk.com/id471006201 | \u0414\u0421 MAkcDV#4612\r\n\u0418\u043B\u044C\u044F
+    - Unity Developer | \u0414\u0421 Elias#1662\r\n\u0410\u0440\u0442\u0435\u043C
+    - \u041C\u043B\u0430\u0434\u0448\u0438\u0439 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442
+    | \u0414\u0421 Stellar#7037"
 --- !u!222 &1248165040
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3376,7 +3398,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
+    m_HighlightedColor: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -3765,7 +3787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -23.294922, y: -1072}
+  m_AnchoredPosition: {x: -30.13501, y: -1141}
   m_SizeDelta: {x: -772.15, y: -53.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1464957482
@@ -3936,7 +3958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1070, y: 29}
+  m_AnchoredPosition: {x: 1070, y: -27}
   m_SizeDelta: {x: 628.98, y: 24.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559559856
@@ -4915,8 +4937,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -3, y: 0.0000076293945}
-  m_SizeDelta: {x: 23, y: 73}
+  m_AnchoredPosition: {x: -4, y: 0.78999996}
+  m_SizeDelta: {x: 23, y: 61.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2120912789
 MonoBehaviour:
