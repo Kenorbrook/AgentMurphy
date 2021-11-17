@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-
+    [SerializeField] private AudioMixer _sceneMixer;
     [SerializeField] Animator SettingsAnimator;
     [SerializeField] Animator AuthorsAnimator;
 
@@ -21,7 +23,15 @@ public class MainMenuController : MonoBehaviour
     {
         
     }
-
+    public void OnChangeVolume(Slider slider)
+    {
+        float volume = 1 - slider.value;
+        _sceneMixer.SetFloat("volume", -80 * volume);
+    }
+    public void OnExitGame()
+    {
+        Application.Quit();
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(1);

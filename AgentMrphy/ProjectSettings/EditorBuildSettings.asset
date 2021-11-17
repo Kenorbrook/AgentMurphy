@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Xusagi/MainMenu 1.unity
     guid: 3fe2b8b08d3f5ee44bb59b344da33385
   - enabled: 1
-    path: Assets/Doren/EliasScene 1.unity
-    guid: 700cbdb417ff2664ea831869b3947683
+    path: Assets/Doren/LvlScen.unity
+    guid: dccd35df2b578734c802a4e56e52c41d
   m_configObjects: {}

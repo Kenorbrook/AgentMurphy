@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
     {
         if (stats.GetBulletsCount() > 0)
         {
-            GetComponent<AudioSource>().Play();
+           // GetComponent<AudioSource>().Play(); // не знаю почему но из за этого не работает 
             GameObject projectile = PoolManager.Instance.PojectilePool.GetPooledObject();
             projectile.transform.position = weaponAnchor.position;
 
