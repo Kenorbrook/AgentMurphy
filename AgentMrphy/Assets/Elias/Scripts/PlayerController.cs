@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
     {
         if (stats.GetBulletsCount() > 0)
         {
+            GetComponent<AudioSource>().Play();
             GameObject projectile = PoolManager.Instance.PojectilePool.GetPooledObject();
             projectile.transform.position = weaponAnchor.position;
 

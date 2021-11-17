@@ -17,8 +17,15 @@ public class Resource : MonoBehaviour
     {
         if (collision.tag == playerTag)
         {
-            Destroy(gameObject);
-            playerStats.PlusOneBullet();
+            GetComponent<AudioSource>().Play();
+            StartCoroutine(WaitBeforeDestroy());
         }
+    }
+
+    IEnumerator WaitBeforeDestroy()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+        playerStats.PlusOneBullet();
     }
 }
