@@ -8,7 +8,6 @@ public class AIStatePersuit : AIState
 
     public override void OnStateEnter()
     {
-        Debug.Log("PersuitState");
 
     }
 

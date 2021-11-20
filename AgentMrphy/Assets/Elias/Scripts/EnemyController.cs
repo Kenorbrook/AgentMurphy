@@ -87,17 +87,6 @@ public class EnemyController : PlayerController
         isCloseAtackInProgres = false;
         currentState.OnStateExit(new AIStatePersuit(this));
     }
-
-    public void CheckAttack()
-    {
-        if (bagAttack.isPlayerInTrigger)
-        {
-            KiryaGameManager.EndPanel.SetActive(true);
-            Time.timeScale = 0;
-            KiryaGameManager.Player.enabled = false;
-        }
-    }
-
     public bool IfTargetInCloseRange()
     {
         if (target == null)

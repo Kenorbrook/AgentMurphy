@@ -5,21 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class KiryaGameManager : MonoBehaviour
 {
+    [SerializeField] private AudioMixerSetting _inteface;
+    [SerializeField] private AudioMixerSetting _scene;
+
+    public delegate void GameEvent(GameState state);
+    public event GameEvent GameEventAction;
+
     public ObjectToTransformate[] transformableObjects;
     public static ObjectToTransformate[] transformablObjects;
-    public static GameObject EndPanel;
-    public GameObject endPanel;
-    public GameObject pausePanel;
-    public GameObject WinPanel;
     public static PlayerController Player;
     public PlayerController player;
     public int EnemiesCount;
     public static KiryaGameManager Instance;
-    
+
+    private void OnEnable()
+    {
+        player.PlayerEventAction += LoseGame;
+    }
+    private void OnDisable()
+    {
+        player.PlayerEventAction -= LoseGame;
+    }
     private void Start()
     {
         Instance = this;
-        EndPanel = endPanel;
         transformablObjects = transformableObjects;
         Player = player;
         Time.timeScale = 1;
@@ -29,30 +38,30 @@ public class KiryaGameManager : MonoBehaviour
     {
         if (EnemiesCount <= 0)
         {
-            WinPanel.SetActive(true);
+            SwithAudioMixer(_inteface, _scene);
+            InvokeEvent(GameState.Win);
         }
     }
-
-    public void RestartLevel()
+    private void LoseGame()
     {
-        SceneManager.LoadScene(1);
+        Time.timeScale = 0;
+        SwithAudioMixer(_inteface, _scene);
+        InvokeEvent(GameState.Lose);
     }
-
-    public void ToMainMenu()
+    private void SwithAudioMixer(AudioMixerSetting on, AudioMixerSetting off = null)
     {
-        SceneManager.LoadScene(0);
+        on.OnChooseMode(true);
+        if(off !=null)
+            off.OnChooseMode(false);
     }
-
-    public void PauseGame(bool state)
+    public void PauseGame()
     {
-        pausePanel.SetActive(state);
-        if (state)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
+        InvokeEvent(GameState.Pause);
+        Time.timeScale = 0;
+    }
+    private void InvokeEvent(GameState state)
+    {
+        if (GameEventAction != null)
+            GameEventAction(state);
     }
 }

@@ -10,7 +10,6 @@ public class AIStateIdle : AIState
     public override void OnStateEnter()
     {
         bot.StartWaiting();
-        Debug.Log("IdleState");
     }
 
     public override void OnStateExit(AIState newState)

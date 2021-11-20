@@ -17,10 +17,16 @@ public class PlayerController : MonoBehaviour
     //Shoot
     [SerializeField] private float shootTimeDelay;
     [SerializeField] private Transform weaponAnchor;
+
     private float shootTimeTick = 0f;
     protected Moveable moveableComponent;
+
     public Stats stats;
     public PlayerAnimator playerAnimator;
+
+    public delegate void PlayerEvent();
+    public PlayerEvent PlayerEventAction;
+
 
     private void Awake()
     {
@@ -70,7 +76,12 @@ public class PlayerController : MonoBehaviour
         shootTimeTick = shootTimeDelay;
     }
 
-    
+    public void InvokeDeadEvent()
+    {
+        if (PlayerEventAction != null)
+            PlayerEventAction();
+    }
+
     virtual protected GameObject ShootProjectile()
     {
         if (stats.GetBulletsCount() > 0)

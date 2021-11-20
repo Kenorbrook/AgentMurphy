@@ -4,22 +4,12 @@ using UnityEngine;
 
 public class bagAttack : MonoBehaviour
 {
-    public bool isPlayerInTrigger;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            isPlayerInTrigger = true;
+            collision.GetComponent<PlayerController>().InvokeDeadEvent();
             GetComponentInParent<EnemyController>().CloseAttack();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            isPlayerInTrigger = false;
         }
     }
 }

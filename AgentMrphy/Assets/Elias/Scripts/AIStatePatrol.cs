@@ -8,7 +8,7 @@ public class AIStatePatrol : AIState
 
     public override void OnStateEnter()
     {
-        Debug.Log("PatrolState");
+
 
     }
 
