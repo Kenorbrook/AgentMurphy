@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AndroidController : Controller
 {
-    [SerializeField] private DynamicJoystick _jostick;
+    [SerializeField] private FixedJoystick _jostick;
 
     private float _direction;
     private bool _canShoot = true;
