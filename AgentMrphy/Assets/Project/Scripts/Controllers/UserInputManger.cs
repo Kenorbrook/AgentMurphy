@@ -31,8 +31,6 @@ public class UserInputManger : Singleton<UserInputManger>
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        if (horizontalInput != 0)
-            avatar.HandleMoveInput(horizontalInput > 0);
     }
 
     void PCInput()
@@ -40,13 +38,5 @@ public class UserInputManger : Singleton<UserInputManger>
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        if (horizontalInput != 0)
-            avatar.HandleMoveInput(horizontalInput > 0);
-
-        if (Input.GetButtonDown("Jump"))
-            avatar.HandleJumpInput();
-
-        if (Input.GetButton("Fire1"))
-            avatar.HandleShootInput();
     }
 }

@@ -8,7 +8,7 @@ public class bagAttack : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<PlayerController>().InvokeDeadEvent();
+            collision.GetComponent<Player>().InvokeDeadEvent();
             GetComponentInParent<EnemyController>().CloseAttack();
         }
     }

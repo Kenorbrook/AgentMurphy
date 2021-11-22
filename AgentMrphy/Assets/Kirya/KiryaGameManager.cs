@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class KiryaGameManager : MonoBehaviour
 {
+    [SerializeField] private Player _player;
     [SerializeField] private AudioMixerSetting _inteface;
     [SerializeField] private AudioMixerSetting _scene;
 
@@ -13,24 +14,21 @@ public class KiryaGameManager : MonoBehaviour
 
     public ObjectToTransformate[] transformableObjects;
     public static ObjectToTransformate[] transformablObjects;
-    public static PlayerController Player;
-    public PlayerController player;
     public int EnemiesCount;
     public static KiryaGameManager Instance;
 
     private void OnEnable()
     {
-        player.PlayerEventAction += LoseGame;
+        _player.PlayerEventAction += LoseGame;
     }
     private void OnDisable()
     {
-        player.PlayerEventAction -= LoseGame;
+        _player.PlayerEventAction -= LoseGame;
     }
     private void Start()
     {
         Instance = this;
         transformablObjects = transformableObjects;
-        Player = player;
         Time.timeScale = 1;
     }
 
