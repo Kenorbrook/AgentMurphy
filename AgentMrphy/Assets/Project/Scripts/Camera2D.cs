@@ -7,6 +7,7 @@ public class Camera2D : MonoBehaviour
 {
 	[SerializeField] private float smooth = 2.5f;
 	[SerializeField] Vector2 offset;
+
 	private Vector3 min, max;
 	private Camera cam;
 	private Transform player;

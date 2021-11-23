@@ -32,7 +32,7 @@ public class JumpAnimation  : IJump
             _playerTransform.position = GetCurretPosition(offset);
             yield return null;
         }
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         _isJump = false;
     }
     private Vector3 GetCurretPosition(float offset)

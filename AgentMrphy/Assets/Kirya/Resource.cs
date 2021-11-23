@@ -17,14 +17,8 @@ public class Resource : MonoBehaviour
     {
         if (collision.tag == playerTag)
         {
-            StartCoroutine(WaitBeforeDestroy());
+            Destroy(gameObject);
+            playerStats.PlusOneBullet();
         }
-    }
-
-    IEnumerator WaitBeforeDestroy()
-    {
-        yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
-        playerStats.PlusOneBullet();
     }
 }
