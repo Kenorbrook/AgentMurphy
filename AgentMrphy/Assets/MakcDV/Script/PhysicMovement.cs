@@ -1,51 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PhysicMovement : MonoBehaviour
+public class PhysicMovement
 {
-    [SerializeField] private int _speedMovement;
-    [SerializeField] private Controller _controller;
-    [SerializeField] private Transform groundCheckAnchor;
-    [SerializeField] private LayerMask groundLayerMask;
+    private readonly int _speedMovement;
+    private readonly Rigidbody2D _rigidbody;
 
-    private Rigidbody2D _rigidbody;
-
-    private float groundCheckRadius = .2f;
-    private bool isOnGround = true;
-
-    private void Awake()
+    public PhysicMovement(int speedMovement, Rigidbody2D rigidbody)
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = rigidbody;
+        _speedMovement = speedMovement;
     }
 
-    private void FixedUpdate()
+    public void Move(float direction)
     {
-        OnGroundCheck();
-        Move();
-    }
-
-    private void OnGroundCheck()
-    {
-        isOnGround = false;
-
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckAnchor.position, groundCheckRadius, groundLayerMask);
-        foreach (Collider2D collider in colliders)
-        {
-            if (collider.gameObject != gameObject)
-                isOnGround = true;
-        }
-    }
-
-    public void Jump(float force)
-    {
-        Debug.Log(isOnGround);
-        if (!isOnGround)
-            return;
-        _rigidbody.AddForce(Vector2.up * force, ForceMode2D.Impulse);
-    }
-    private void Move()
-    {
-        _rigidbody.velocity = new Vector2(_speedMovement * _controller.Direction, _rigidbody.velocity.y);
+        _rigidbody.velocity = new Vector2(_speedMovement * direction, _rigidbody.velocity.y);
     }
 }

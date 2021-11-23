@@ -17,7 +17,6 @@ public class Resource : MonoBehaviour
     {
         if (collision.tag == playerTag)
         {
-            GetComponent<AudioSource>().Play();
             StartCoroutine(WaitBeforeDestroy());
         }
     }

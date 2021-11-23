@@ -22,7 +22,12 @@ public class AndroidController : Controller
 
     private void OnSetDirection()
     {
-        _direction = _jostick.Direction.x;
+        if (_jostick.Direction.x > 0)
+            _direction = 1;
+        else if (_jostick.Direction.x < 0)
+            _direction = -1;
+        else
+            _direction = 0;
     }
 
     private void CheakJump()
@@ -30,7 +35,6 @@ public class AndroidController : Controller
 
         if (_jostick.Direction.y > 0.9f && JumpEvent!=null)
         {
-            Debug.Log(_jostick.Direction.y);
             JumpEvent();
         }
     }

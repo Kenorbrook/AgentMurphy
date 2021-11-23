@@ -8,11 +8,13 @@ public class Player : MonoBehaviour
 {
     [Header("Set in Inspector")]
 
-    [SerializeField] private float jumpForce;
+    [SerializeField] private int _speedMovement;
     [SerializeField] private Transform weaponAnchor;
     [SerializeField] private Controller _controller;
+    [SerializeField] private JumpAnimation _jumpAnimation;
 
     private PhysicMovement _movement;
+    private IJump _playerJump;
 
     public Stats stats;
     public PlayerAnimator playerAnimator;
@@ -20,29 +22,30 @@ public class Player : MonoBehaviour
     public delegate void PlayerEvent();
     public PlayerEvent PlayerEventAction;
 
+    public bool IsGround => CheakGround(); 
 
     private void Awake()
     {
-        _movement = GetComponent<PhysicMovement>();
+        _playerJump = _jumpAnimation;
+        _movement = new PhysicMovement(_speedMovement, GetComponent<Rigidbody2D>());
     }
     private void OnEnable()
     {
-        _controller.JumpEvent += HandleJumpInput;
+        _controller.JumpEvent += _playerJump.Jump;
         _controller.ShootEvent += HandleShootInput;
     }
     private void OnDisable()
     {
-        _controller.JumpEvent -= HandleJumpInput;
+        _controller.JumpEvent -= _playerJump.Jump;
         _controller.ShootEvent -= HandleShootInput;
+    }
+    private void FixedUpdate()
+    {
+        _movement.Move(_controller.Direction);
     }
     private void HandleShootInput()
     {
         ShootProjectile();
-    }
-
-    private void HandleJumpInput()
-    {
-        _movement.Jump(jumpForce);
     }
 
     public void InvokeDeadEvent()
@@ -72,5 +75,8 @@ public class Player : MonoBehaviour
             return null;
         }
     }
-
+    private bool CheakGround()
+    {
+        return true;
+    }
 }
