@@ -7,27 +7,32 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] private AudioMixer _sceneMixer;
+    //[SerializeField] private AudioMixer _sceneMixer;
     [SerializeField] Animator SettingsAnimator;
     [SerializeField] Animator AuthorsAnimator;
-
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] float musicVolume = 1F;
     bool settingsEnabled = false;
     bool authorsEnabled = false;
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        audioSource.volume = musicVolume;
     }
-    public void OnChangeVolume(Slider slider)
+    public void OnChangeVolume(float vol)
+    {
+        musicVolume = vol;
+    }
+    /*public void OnChangeVolume(Slider slider)
     {
         float volume = 1 - slider.value;
-        _sceneMixer.SetFloat("volume", -80 * volume);
-    }
+        _sceneMixer.SetFloat("volume", -10 * volume);
+    }*/
     public void OnExitGame()
     {
         Application.Quit();
@@ -50,4 +55,5 @@ public class MainMenuController : MonoBehaviour
                 break;
         }
     }
+    
 }

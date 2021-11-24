@@ -4043,9 +4043,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a564cebe0b49834c9313637c34f350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneMixer: {fileID: 24100000, guid: 104bf787d312cc0459b5bba7aeac8798, type: 2}
   SettingsAnimator: {fileID: 1262139073}
   AuthorsAnimator: {fileID: 0}
+  audioSource: {fileID: 0}
+  musicVolume: 1
 --- !u!4 &489026124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 518177990485325660, guid: 87f9b016cb041664fa14a39667780d46, type: 3}
@@ -9851,10 +9852,10 @@ MonoBehaviour:
       - m_Target: {fileID: 480259458}
         m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
         m_MethodName: OnChangeVolume
-        m_Mode: 2
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 1156224880}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
